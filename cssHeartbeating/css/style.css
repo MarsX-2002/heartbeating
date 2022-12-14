@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color-female: #e6c6cf;
+    --bg-color-male: #c9e6eb;
+
+    --heart-size: 80px;
+}
+
+/* BACKGROUND START*/
+.huge-container {
+    background-color: #020227ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: background-animation 0.47s ease infinite;
+}
+
+@keyframes background-animation {
+    0% {
+        background-color: #020227f3;
+    }
+
+
+    50% {
+        background-color: #0d0d4df3;
+    }
+
+
+    100% {
+        background-color: #020227f3;
+    }
+}
+
+/* BACKGROUND END*/
+
+/* HERO START*/
+.hero {
+    height: 300px;
+    /* animation: ; */
+    border-radius: 0 0 35px 35px;
+    animation: hero-animate 2s linear infinite;
+}
+
+.girl {
+    margin-left: 50px;
+}
+
+.boy {
+    margin-right: 50px;
+}
+
+@keyframes hero-animate {
+    50% {
+        transform: scale(1.2);
+
+    }
+}
+/* HERO END*/
+
+/* HEART START*/
+.heart {
+    position: relative;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background-color: var(--bg-color-female);
+    margin: auto;
+    transform: rotate(45deg);
+    border-radius: 3px;
+    box-shadow: 0 0 70px #f20044;
+    animation: heartbeat 0.47s linear infinite;
+}
+
+.heart.dark {
+    background-color: var(--bg-color-male);
+    box-shadow: 0 0 70px #0091f2;
+}
+
+.heart.dark:before {
+    background-color: var(--bg-color-male);
+}
+
+.heart.dark:after {
+    background-color: var(--bg-color-male);
+}
+
+.heart:before {
+    content: "";
+    position: absolute;
+    background-color: var(--bg-color-female);
+    width: var(--heart-size);
+    height: var(--heart-size);
+    border-radius: 50%;
+    top: -50%;
+}
+
+.heart:after {
+    content: "";
+    position: absolute;
+    background-color: var(--bg-color-female);
+    width: var(--heart-size);
+    height: var(--heart-size);
+    border-radius: 50%;
+    left: -50%;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: rotate(45deg) scale(0.8);
+    }
+
+    7% {
+        transform: rotate(45deg) scale(1.0);
+    }
+
+    100% {
+        transform: rotate(45deg) scale(0.8);
+    }
+}
+
+/* BACKGROUND END*/
